@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏆 Рекорды - Переливания</title>
+    <link rel="stylesheet" href="leaderboard.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Топ Рекордов</h1>
+        
+        <div class="current-result" id="current-result" style="display: none;">
+            <h3>Ваш результат</h3>
+            <p>👤 <span id="result-name"></span></p>
+            <p>⭐ <span id="result-score"></span></p>
+        </div>
+        
+        <ul id="leaderboard-list"></ul>
+        
+        <div class="buttons">
+            <a href="index.html" class="btn">🏠 Главная</a>        <!-- ✅ ИСПРАВЛЕНО -->
+            <button id="clear-btn" class="btn danger">🗑️ Очистить рекорды</button>
+        </div>
+    </div>
+    <script src="leaderboard.js"></script>
+</body>
+</html>
