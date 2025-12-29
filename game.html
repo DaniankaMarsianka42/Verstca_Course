@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧪 Переливания - Игра</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div class="game-header">
+        <div class="hud-item">
+            👤 <span id="player-name">-</span>
+        </div>
+        <div class="hud-item">🎯 Уровень: <span id="level-display">1</span></div>
+        <div class="hud-item">⏰ Время: <span id="time-display">60</span>с</div>
+        <div class="hud-item">⭐ Очки: <span id="score-display">0</span></div>
+        <div class="hud-item">🎲 Цель: <span id="target-display">?</span></div>
+    </div>
+
+    <div class="game-info">
+        <p id="level-instruction">Загрузка уровня...</p>
+    </div>
+
+    <div id="game-area" class="game-area"></div>
+
+    <div class="controls">
+        <button id="restart-level-btn" class="btn warning">🔄 Сброс уровня</button>
+        <a href="leaderboard.html" class="btn secondary">🏆 Рекорды</a>
+        <button id="abort-game-btn" class="btn danger">❌ Завершить игру</button>
+    </div>
+    
+    <div id="context-menu" class="context-menu">
+        <ul>
+            <li id="ctx-empty">🗑️ Вылить (Штраф -50)</li>
+        </ul>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
