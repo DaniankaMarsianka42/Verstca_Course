@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра "Переливания" - Результаты</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/results.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="results-card">
+            <div class="results-header">
+                <h2><i class="fas fa-trophy"></i> Результаты игры</h2>
+                <div class="player-result">
+                    <div class="result-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="result-info">
+                        <h3 id="result-name">Игрок</h3>
+                        <div class="result-score">
+                            Набрано очков: <span id="result-score">0</span>
+                        </div>
+                        <div class="result-level">
+                            Пройдено уровней: <span id="result-level">1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="leaderboard-section">
+                <h3 id="result-title">🏆 Таблица рекордов</h3>
+                <div class="leaderboard-controls">
+                    <button id="clear-leaderboard-btn" class="btn-warning">
+                        <i class="fas fa-trash-alt"></i> Очистить рекорды
+                    </button>
+                </div>
+                <ul id="leaderboard-list" class="leaderboard-list">
+                    <!-- Рекорды будут загружены здесь -->
+                </ul>
+            </div>
+            
+            <div class="results-actions">
+                <a href="game.html" class="btn-primary" id="play-again-btn">
+                    <i class="fas fa-play-circle"></i> Играть снова
+                </a>
+                <a href="index.html" class="btn-secondary" id="go-home-btn">
+                    <i class="fas fa-home"></i> Главное меню
+                </a>
+            </div>
+            
+            <div class="game-tips">
+                <p><i class="fas fa-lightbulb"></i> <strong>Совет:</strong> Используйте клавиши 1-4 для быстрого выбора сосудов на высоких уровнях</p>
+                <p><i class="fas fa-history"></i> <strong>Статистика:</strong> Всего сыграно: <span id="total-games">0</span> игр</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/leaderboard.js"></script>
+    <script src="js/results.js"></script>
+</body>
+</html>

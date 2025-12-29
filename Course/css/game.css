@@ -1,0 +1,304 @@
+/* Стили для страницы игры */
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(26, 41, 128, 0.05);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#player-name-display {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a2980;
+}
+
+.level-badge {
+    background: linear-gradient(to right, #1a2980, #26d0ce);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.game-stats {
+    display: flex;
+    gap: 25px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+}
+
+.stat i {
+    color: #26d0ce;
+    font-size: 1.3rem;
+}
+
+.timer {
+    color: #ff6b6b;
+    font-weight: 600;
+}
+
+.game-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.control-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: #f0f0f0;
+    color: #333;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: #e0e0e0;
+    transform: scale(1.1);
+}
+
+.game-main {
+    height: calc(100% - 180px);
+    display: flex;
+    flex-direction: column;
+}
+
+.game-instruction {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+    color: #1a2980;
+    border-left: 5px solid #26d0ce;
+    animation: pulse 2s infinite;
+}
+
+.game-area-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70%;
+    padding: 20px;
+    background: rgba(26, 41, 128, 0.03);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.game-area {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+    height: 100%;
+    flex: 1;
+}
+
+.jug-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.jug {
+    width: 90px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 5px solid #1a2980;
+    border-bottom: 10px solid #1a2980;
+    border-radius: 0 0 30px 30px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: flex-end;
+}
+
+.jug:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.jug.selected {
+    box-shadow: 0 0 0 3px #26d0ce, 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.jug.dragging {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+.jug.drag-over {
+    box-shadow: 0 0 0 3px #ff6b6b;
+}
+
+.water {
+    width: 100%;
+    background: linear-gradient(to top, #1a2980, #26d0ce);
+    transition: height 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border-radius: 0 0 25px 25px;
+}
+
+.jug-info {
+    font-weight: 600;
+    color: #1a2980;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.target-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+}
+
+.target-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.target-amount {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #1a2980;
+    line-height: 1;
+}
+
+.target-unit {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.controls-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.control-hint {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.key {
+    background: #1a2980;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.game-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(26, 41, 128, 0.05);
+    border-radius: 15px;
+}
+
+.progress-container {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.progress-label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1a2980;
+}
+
+.progress-bar {
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #1a2980, #26d0ce);
+    width: 0%;
+    transition: width 0.5s;
+}
+
+/* Адаптивность для страницы игры */
+@media (max-width: 768px) {
+    .game-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .game-stats {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .game-area-container {
+        flex-direction: column;
+        height: auto;
+        gap: 30px;
+    }
+    
+    .game-area {
+        flex-wrap: wrap;
+    }
+    
+    .controls-info {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .game-footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .progress-container {
+        width: 100%;
+        margin-right: 0;
+    }
+}

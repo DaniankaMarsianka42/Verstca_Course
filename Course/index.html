@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра "Переливания" - Вход</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="logo">
+                <div class="water-icon">
+                    <i class="fas fa-tint"></i>
+                    <i class="fas fa-tint"></i>
+                    <i class="fas fa-tint"></i>
+                </div>
+                <h1>Водные переливания</h1>
+                <p class="subtitle">Логическая головоломка</p>
+            </div>
+            
+            <form id="login-form" class="login-form">
+                <div class="input-group">
+                    <label for="username"><i class="fas fa-user"></i> Введите ваше имя</label>
+                    <input type="text" id="username" placeholder="Например: Алексей" maxlength="15" required autofocus>
+                    <div class="input-hint">Имя будет отображаться в таблице рекордов</div>
+                </div>
+                
+                <div class="difficulty-selector">
+                    <p>Начальная сложность:</p>
+                    <div class="difficulty-buttons">
+                        <button type="button" class="difficulty-btn active" data-level="1">Легко</button>
+                        <button type="button" class="difficulty-btn" data-level="2">Средне</button>
+                        <button type="button" class="difficulty-btn" data-level="3">Сложно</button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-play"></i> Начать игру
+                </button>
+            </form>
+            
+            <div class="login-footer">
+                <a href="results.html" class="btn-secondary">
+                    <i class="fas fa-trophy"></i> Таблица рекордов
+                </a>
+                <div class="game-info">
+                    <p><i class="fas fa-info-circle"></i> Цель: получить указанное количество воды в одном из сосудов</p>
+                    <p><i class="fas fa-gamepad"></i> Управление: клики, перетаскивание, клавиши 1-4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

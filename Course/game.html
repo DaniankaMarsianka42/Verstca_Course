@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра "Переливания" - Уровень</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="game-header">
+            <div class="player-info">
+                <span id="player-name-display"></span>
+                <div class="level-badge" id="level-display">1</div>
+            </div>
+            
+            <div class="game-stats">
+                <div class="stat">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Цель: <strong id="target-display">0</strong> л</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-star"></i>
+                    <span>Очки: <strong id="score-display">0</strong></span>
+                </div>
+                <div class="stat timer">
+                    <i class="fas fa-clock"></i>
+                    <span>Время: <strong id="time-display">0</strong> сек</span>
+                </div>
+            </div>
+            
+            <div class="game-controls">
+                <button id="restart-level-btn" class="control-btn" title="Перезапустить уровень (-20 очков)">
+                    <i class="fas fa-redo"></i>
+                </button>
+                <button id="abort-game-btn" class="control-btn" title="Завершить игру и сохранить результат">
+                    <i class="fas fa-flag-checkered"></i>
+                </button>
+                <button id="game-sound-btn" class="control-btn" title="Звук">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </header>
+        
+        <main class="game-main">
+            <div class="game-instruction" id="level-instruction">
+                🎯 Уровень 1: Кликните сосуд → кликните другой (перелить)
+            </div>
+            
+            <div class="game-area-container">
+                <div id="game-area" class="game-area">
+                    <!-- Сосуды будут генерироваться здесь -->
+                </div>
+                
+                <div class="target-container">
+                    <div class="target-label">ЦЕЛЬ</div>
+                    <div class="target-amount" id="target-visual">0</div>
+                    <div class="target-unit">литров</div>
+                </div>
+            </div>
+            
+            <div class="controls-info">
+                <div class="control-hint">
+                    <div class="key">ЛКМ</div>
+                    <span>Выбрать/перелить</span>
+                </div>
+                <div class="control-hint">
+                    <div class="key">Drag</div>
+                    <span>Перетащить (уровень 2)</span>
+                </div>
+                <div class="control-hint">
+                    <div class="key">1-4</div>
+                    <span>Выбрать сосуд</span>
+                </div>
+                <div class="control-hint">
+                    <div class="key">ПКМ</div>
+                    <span>Меню (уровень 3+)</span>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="game-footer">
+            <div class="progress-container">
+                <div class="progress-label">Прогресс уровня</div>
+                <div class="progress-bar">
+                    <div id="level-progress" class="progress-fill"></div>
+                </div>
+            </div>
+            
+            <a href="index.html" class="btn-secondary">
+                <i class="fas fa-home"></i> В главное меню
+            </a>
+        </footer>
+    </div>
+
+    <!-- Контекстное меню -->
+    <div id="context-menu" class="context-menu">
+        <ul>
+            <li id="ctx-empty"><i class="fas fa-trash"></i> Опустошить сосуд</li>
+            <li id="ctx-shake"><i class="fas fa-sync-alt"></i> Взболтать</li>
+            <li id="ctx-info"><i class="fas fa-info-circle"></i> Информация</li>
+        </ul>
+    </div>
+
+    <!-- Анимация воды -->
+    <div id="water-animation" class="water-animation"></div>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Заголовок</h3>
+            <p id="modal-message">Сообщение</p>
+            <button id="modal-close" class="btn-primary">OK</button>
+        </div>
+    </div>
+
+    <!-- Звуковые эффекты -->
+    <audio id="sound-pour" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-water-sci-fi-bleep-902.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound-win" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound-click" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/script.js"></script>
+    <script src="js/game-logic.js"></script>
+    <script src="js/ui-handler.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
